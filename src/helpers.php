@@ -22,7 +22,11 @@ if (! function_exists('config_path')) {
      */
     function config_path($path = '')
     {
-        return app()->make('path.config').($path ? DIRECTORY_SEPARATOR.$path : $path);
+    	$app_path = app_path();
+    	$app_path = explode(DIRECTORY_SEPARATOR, $app_path);
+    	array_pop($app_path);
+    	$config_path = implode(DIRECTORY_SEPARATOR, $app_path).DIRECTORY_SEPARATOR.'config';
+        return $config_path.($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 }
 
