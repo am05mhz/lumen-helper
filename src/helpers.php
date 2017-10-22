@@ -1,5 +1,46 @@
 <?php
 
+if (! function_exists('app_path')) {
+    /**
+     * Get the path to the application folder.
+     *
+     * @param  string  $path
+     * @return string
+     */
+    function app_path($path = '')
+    {
+        return app('path').($path ? DIRECTORY_SEPARATOR.$path : $path);
+    }
+}
+
+if (! function_exists('config_path')) {
+    /**
+     * Get the configuration path.
+     *
+     * @param  string  $path
+     * @return string
+     */
+    function config_path($path = '')
+    {
+        return app()->make('path.config').($path ? DIRECTORY_SEPARATOR.$path : $path);
+    }
+}
+
+if (! function_exists('secure_url')) {
+    /**
+     * Generate a url for the application.
+     *
+     * @param  string  $path
+     * @param  mixed   $parameters
+     * @param  bool    $secure
+     * @return string
+     */
+    function secure_url($path = null, $parameters = [])
+    {
+        return url($path, $parameters, true);
+    }
+}
+
 if (! function_exists('asset')) {
     /**
      * Generate a URL to an application asset.
@@ -12,6 +53,21 @@ if (! function_exists('asset')) {
     function asset($path, $secure = null)
     {
         return app('url')->asset($path, $secure);
+    }
+}
+
+if (! function_exists('secure_asset')) {
+    /**
+     * Generate a url for the application.
+     *
+     * @param  string  $path
+     * @param  mixed   $parameters
+     * @param  bool    $secure
+     * @return string
+     */
+    function secure_asset($path = null)
+    {
+        return asset($path, true);
     }
 }
 
