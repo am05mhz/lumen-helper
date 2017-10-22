@@ -1,0 +1,28 @@
+{
+    "name": "am05mhz/lumen-helper",
+    "description": "Lumen helpers for missing Laravel helpers.",
+    "keywords": ["helper", "laravel", "lumen"],
+    "license": "MIT",
+    "homepage": "http://github.com/am05mhz/lumen-helper",
+    "support": {
+        "issues": "https://github.com/laravel/lumen-framework/issues",
+        "source": "https://github.com/laravel/lumen-framework"
+    },
+    "authors": [
+        {
+            "name": "Amos Setio",
+            "email": "am05mhz@gmail.com"
+        }
+        {
+            "name": "Taylor Otwell",
+            "email": "taylorotwell@gmail.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
