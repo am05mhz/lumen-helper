@@ -1,20 +1,5 @@
 <?php
 
-if (! function_exists('url')) {
-    /**
-     * Generate a url for the application.
-     *
-     * @param  string  $path
-     * @param  mixed   $parameters
-     * @param  bool    $secure
-     * @return string
-     */
-    function url($path = null, $parameters = [], $secure = null)
-    {
-        return app('url')->to($path, $parameters, $secure);
-    }
-}
-
 if (! function_exists('asset')) {
     /**
      * Generate a URL to an application asset.
